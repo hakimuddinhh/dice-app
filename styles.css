@@ -12,7 +12,17 @@ main {
         font-weight: bold;
       font-size: calc(20vh + 20vw);
       font-family: monospace;
+
       
+  }
+
+  .score:focus {
+    -webkit-animation: beat 1s ease-in-out backwards;
+            animation: beat 1s ease-in-out backwards;
+  }
+  .score:active {
+    -webkit-animation: none;
+            animation: none;
   }
 
   img {
@@ -23,4 +33,22 @@ main {
   .score.reverse {
     transform: rotate(
   180deg);
+  }
+
+
+
+  .animate-n {
+    -webkit-animation-name: cssAnimation;
+    -webkit-animation-duration:.3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+  }
+  @-webkit-keyframes cssAnimation {
+    from {
+      -webkit-transform: scale(1);
+    }
+    to {
+      -webkit-transform: scale(1.2);
+    }
   }
