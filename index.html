@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Dice</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <main>
+        <div class="score reverse">
+            R
+        </div>
+        <div class="reload">
+            <button id="reload-btn">
+                <image src="data:image/png;base64,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" />
+            </button>
+        </div>
+        <div class="score">
+            R
+        </div>
+    </main>
+</body>
+<script type="text/javascript" src="./index.js"></script>
+</html>
