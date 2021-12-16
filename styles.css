@@ -38,17 +38,33 @@ main {
 
 
   .animate-n {
-    -webkit-animation-name: cssAnimation;
+    -webkit-animation-name: zoom;
     -webkit-animation-duration:.3s;
     -webkit-animation-iteration-count: 1;
     -webkit-animation-timing-function: ease;
     -webkit-animation-fill-mode: forwards;
   }
-  @-webkit-keyframes cssAnimation {
+
+  .animate-n.reverse {
+    -webkit-animation-name: zoomReverse;
+  }
+  
+  @-webkit-keyframes zoom {
     from {
       -webkit-transform: scale(1);
     }
     to {
       -webkit-transform: scale(1.2);
+    }
+  }
+
+  @-webkit-keyframes zoomReverse {
+    from {
+      -webkit-transform: rotate(
+        180deg) scale(1);
+    }
+    to {
+      -webkit-transform: rotate(
+        180deg) scale(1.2);
     }
   }
