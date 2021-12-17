@@ -1,5 +1,6 @@
 const reloadBtn = document.querySelector('#reload-btn');
 const chances = [1,1,2,1,2,3,3,2,3,4,8,4];
+const rollSound = new Audio("./roll.wav");
 
 // 1 => 2
 // 2 => 3
@@ -19,6 +20,8 @@ function getChanceValue() {
 }
 
 function showUpdatedValue(updatedValue) {
+    rollSound.currentTime = 0
+    rollSound.play()
 	document.querySelectorAll('.score').forEach(function(elem, idx) {
 			elem.innerText = updatedValue;
 
@@ -26,5 +29,4 @@ function showUpdatedValue(updatedValue) {
             void elem.offsetWidth; // trigger reflow
             elem.classList.add('animate-n'); // start animation
     })
-    new Audio("./roll.wav").play()
 }
